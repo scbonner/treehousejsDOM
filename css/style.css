@@ -1,9 +1,14 @@
-body {
-
-}
 
 .jumbotron {
-  background-color: black;
+  background-color: teal;
   color: white;
   font-style: bold;
+}
+
+#myButton {
+  background-color: rgb(0, 255, 0);
+}
+
+#resetButton {
+  background-color: darkorange;
 }
