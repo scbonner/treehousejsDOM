@@ -9,23 +9,22 @@
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 id='myHeading'>Changing Attributes</h1>
+            <h1 class="display-4">textContent</h1>
         </div>
     </div>
     <p>Making Web Page Interactive</p>
-    <button id='toggleList'>Hide list</button>
-    <div class='list'>
-        <p class='description'>Things that are purple:</p>
-        <input type='text' class='description'>
-        <button class="description">Change list description</button>
+    <p class='description'>Things that are purple:</p>
+    <input type='text' class='description'>
+    <button class="description">Change list description</button>
         <ul>
             <li>grapes</li>
             <li>amethyst</li>
             <li>lavender</li>
             <li>plums</li>
         </ul>
-    </div>
+        <input type='text' class='addItemInput'>
+        <button class="addItemButton">Add Item</button>    
 
-    <script src='../StylingElements/app.js'></script>
+    <script src='../CreateDOMElem/'></script>
 </body>
 </html>
