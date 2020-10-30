@@ -7,8 +7,10 @@ const ul = document.getElementById('invitedList');
 function createLI(text) {
     //create list item element and store
     const li = document.createElement('li');
+    const span = document.createElement('span');
     //place the list item inside ul list item
-    li.textContent = text;
+    span.textContent = text;
+    li.appendChild(span);
     const label = document.createElement('label');
     label.textContent = 'Confirmed';
     const checkbox = document.createElement('input');
@@ -21,7 +23,7 @@ function createLI(text) {
     li.appendChild(editButton);
 
     const removeButton = document.createElement('button');
-    removeButton.textContent = 'removed';
+    removeButton.textContent = 'remove';
     li.appendChild(removeButton);
     return li;
 }
@@ -51,11 +53,19 @@ ul.addEventListener('change', (e) => {
 
 ul.addEventListener('click', (e) => {
     if (e.target.tagName === 'BUTTON') {
-        if (e.target.textContent === 'remove') {
-            const li = e.target.parentNode;
-            const ul = li.parentNode;
+        const button = e.target;
+        const li = button.parentNode;
+        const ul = li.parentNode;
+        if (button.textContent === 'remove') {
             ul.removeChild(li);
           } else if (e.target.textContent === 'edit') {
+            const span = li.firstElementChild;
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.value = span.textContent;
+            li.insertBefore(input, span);
+            li.removeChild(span);
+            button.textContent = 'save';
         
           }
     }
