@@ -37,13 +37,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function createLI(text) {
-      const li =document.createElement('li');
-      //create list item element and store
-      const span = document.createElement('span');
+    function createElement(elementName, property, value) {
+      const element = document.createElement('elementName');
       //place the list item inside ul list item
-      span.textContent = text;
+      element[property] = value;
+      return element;
+    }
+      const li = document.createElement('li');
+      //create list item element and store
+      const span = createElement('span', 'textContent', text);
+      //place the list item inside ul list item
       li.appendChild(span);
-      const label = document.createElement('label');
+      const span = document.createElement('label');
       label.textContent = 'Confirmed';
       const checkbox = document.createElement('input');
       checkbox.type = 'checkbox';
